@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Chelimsky", "Chad Humphries"]
-  s.date = %q{2010-06-06}
+  s.date = %q{2010-06-10}
   s.description = %q{RSpec-2 for Rails-3}
   s.email = %q{dchelimsky@gmail.com;chad.humphries@gmail.com}
   s.extra_rdoc_files = [
@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
      "lib/generators/rspec/helper/helper_generator.rb",
      "lib/generators/rspec/helper/templates/helper_spec.rb",
      "lib/generators/rspec/install/install_generator.rb",
+     "lib/generators/rspec/install/templates/.rspec",
      "lib/generators/rspec/install/templates/autotest/discover.rb",
      "lib/generators/rspec/install/templates/config/initializers/rspec_generator.rb.tt",
      "lib/generators/rspec/install/templates/lib/tasks/rspec.rake",
@@ -119,14 +120,14 @@ Gem::Specification.new do |s|
   Be sure to run the following command in each of your
   Rails apps if you're upgrading:
 
-    script/rails generate rspec
+    script/rails generate rspec:install
 
 **************************************************
 }
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{rspec}
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{rspec-rails-2.0.0.beta.11}
   s.test_files = [
     "spec/rspec/rails/example/controller_example_group_spec.rb",
@@ -150,7 +151,7 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rspec>, ["= 2.0.0.beta.11"])
       s.add_runtime_dependency(%q<webrat>, [">= 0.7.0"])
     else
