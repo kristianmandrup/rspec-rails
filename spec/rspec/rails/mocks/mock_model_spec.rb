@@ -74,6 +74,16 @@ describe "mock_model(RealModel)" do
     end
   end
 
+  describe "#model_name" do
+    before(:each) do
+      @model = mock_model(SubMockableModel)
+    end
+    it "says its model_name" do
+      @model.model_name(SubMockableModel).should == "SubMockableModel"
+    end
+  end
+
+
   describe "#destroyed?" do
     context "default" do
       it "returns false" do
